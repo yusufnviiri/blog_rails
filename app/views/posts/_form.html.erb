@@ -4,10 +4,11 @@
 <div class=" author-form">
 <h3>Post Form</h3>
 <%= form_for([@author,@author.posts.build]) do |form|%>
-<%= form.label :Text , "Enter Text",class:"form-label"%>
-<%= form.text_field :Text ,class:"form-control"%>
 <%= form.label :title , "Enter Title",class:"form-label"%>
 <%= form.text_field :title ,class:"form-control"%>
+<%= form.label :Text , "Enter Text",class:"form-label"%>
+<%= form.text_field :Text ,class:"form-control"%>
+
 <%= form.submit "Post" ,class: "btn btn-info mt-3"%>
 <% end %>
 </div>
