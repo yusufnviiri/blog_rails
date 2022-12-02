@@ -1,0 +1,18 @@
+
+
+
+<div class=" author-form">
+<h3>Comment Form</h3>
+
+
+<%= form_with scope: :comment, url: author_post_comments_path , method: "post" do |form| %>
+<%= form.label :text, "Enter text" %>
+<%= form.text_field :text ,class: "form-control"  %>
+<%= form.text_field  :author_id, value:params[:author_id] ,type:"hidden" ,class: "form-control"  %>
+<%= form.text_field  :post_id ,value:params[:post_id] ,type:"hidden" ,class: "form-control"  %>
+
+
+<%= form.submit "Comment" ,class: "btn btn-info mt-3"%>
+
+<%end%>
+</div>

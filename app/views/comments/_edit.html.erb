@@ -1,0 +1,17 @@
+
+
+
+<div class=" author-form">
+<h3>Edit Form</h3>
+
+
+<%= form_with scope: :comment, url: author_post_comment_path , method: "patch" do |form| %>
+
+<%= form.label :Text, "Enter name" ,class: "form-label"  %>
+<%= form.text_field :text ,class: "form-control"%>
+
+
+<%= form.submit "Update" ,class: "btn btn-info mt-3"%>
+
+<%end%>
+</div>

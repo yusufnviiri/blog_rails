@@ -1,0 +1,30 @@
+<div class="container">
+<% if @posts%>
+
+<%
+ @posts.each do |post| %>
+ <div class="mb-2">
+   <p class="m-0"> 
+   
+   <span >Title:</span>
+    <%= post.title%></p>
+ <p class="m-0">
+ <span>Text:</span>
+ <%= post.Text%>
+ </p>
+
+   <p class="m-0">
+   <span>Time Posted:</span>
+    <%= post.created_at%></p>
+    
+   <p class="m-0">
+   <span> Posted by:</span>
+    <%= post.author.name%></p>
+   </div>
+     <%= link_to "Show Post", author_post_path(post.author_id,post.id),class:"btn btn-primary" %>
+<% end %>
+ </div>
+ <% else %>
+ <h4> No comment</h4>
+ 
+ <% end %>

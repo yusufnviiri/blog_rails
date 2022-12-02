@@ -1,0 +1,59 @@
+<div class="container">
+<%= notice %>
+<div class="row ">
+<div class="col-md-auto col-2-sm ">
+
+<p>
+   <span >Comments: </span>
+
+<%= @commentsCounter%> 
+</p>
+<p>
+   <span >Likes:</span>
+
+<%=  @likesCounter%> 
+</p>
+<p>
+   <span >Title:</span>
+
+<%= @post.title%>
+</p>
+<p>
+   <span >Name:</span>
+
+<%= @post.Text%>
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<div class="row no-gutters">
+<div class="col-md-auto col-2-sm ">
+
+  <%= link_to "Edit ", edit_author_post_path(@post.author_id,@post) ,class:"btn btn-primary" %> 
+  <%= link_to "Back to Posts", author_posts_path(@post.author_id,@post.id), class:"btn btn-secondary" %>
+    <%= link_to "Comment", new_author_post_comment_path(@post.author_id,@post.id), class:"btn btn-secondary" %>
+      <%= link_to "see comments", author_post_comments_path(@post.author_id,@post.id) ,class:"btn btn-primary" %> 
+
+
+
+</div>
+
+
+
+<div class="col-3  " id="del_btn">
+ <%= button_to "Like Post", like_path(@post.author_id,@post.id),method: :post ,class:"btn btn-primary"  %>
+</div>
+
+<div class="col-3  " id="del_btn">
+
+  <%= button_to "Destroy ", author_post_path(@post.author_id,@post.id), method: :delete,class:"btn btn-danger mt-2"   ,style:"width:60px;height:40px;font-size:12px;top:0" %>
+
+
+</div>
+</div>
+</div>

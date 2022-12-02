@@ -1,0 +1,31 @@
+
+<div class="container">
+<%=@notice%>
+<div class="row">
+<%
+@author.each do |author|%>
+<div id="authorData" style="min-height:100%;background-color:RGB(6, 28 ,30)" class="mt-1 mx-1   col-3 ">
+
+<div  id="bio" class="m-0 ">
+<p  id="bio" class="m-0 text-break  ">
+<span class="fs-6 my-0 ">Photo: </span> 
+<%=image_tag(author.image)    %>
+</div>
+<p class="m-0"> <span class="fs-6  my-0 ">Name:</span> <%=author.name%></p>
+
+<p class="mt-0 mb-2">
+<span class="fs-6 my-0 ">Bio</span> 
+
+<%=author.bio%>
+</p>
+
+   <%= link_to "View", author,class:"btn btn-primary" %>
+</div>
+
+
+  <% end%>
+  </div>
+ <%= link_to 'Add New ', new_author_path,class:"btn btn-secondary mt-2" %>
+
+
+</div>

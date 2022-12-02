@@ -1,0 +1,5 @@
+<% form_with scope: :like ,:scope :like ,url:like_path ,method: "post" , do |form|%>
+<%= form.text_field :author_id, value:params[:author_id]%>
+<%= form.text_field :post_id, value:params[:post_id]%>
+<%= form.submit "Like" ,class: "btn btn-info mt-3"%>
+<% end %>

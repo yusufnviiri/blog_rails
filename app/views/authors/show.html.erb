@@ -1,0 +1,50 @@
+<%= notice %>
+<div class="container  mt-5">
+<div class="row">
+<div class=" col-auto"><p>
+<span>Name:</span>
+<%= @author.name%>
+</p>
+<p><span>Bio:</span>
+<%= @author.bio%>
+</p>
+<p>
+<span>Posts:</span>
+
+<%= @postCounter%>
+</p>
+</div>
+<div class="col-6"><p class="authorImage">
+
+
+<%=image_tag(@author.image)    %>
+
+</p></div>
+
+</div>
+
+
+
+
+<div class="row no-gutters">
+
+<div class="col-md-auto col-2-sm ">
+  <%= link_to "Edit ", edit_author_path( @author) ,class:" col  btn btn-primary" %> 
+  <%= link_to "Back to Users", authors_path, class:" col-auto mx-1  btn btn-secondary" %>
+ <%= link_to 'Create Post ', new_author_post_path(@author.id),class: " col-auto mx-1   btn btn-secondary" %>
+  
+  <%= link_to 'View all Pots ', author_posts_path(@author.id),class:" col-auto mx-1   btn btn-secondary" %>
+    <%= link_to "all of posts", author_posts_path(@author.id), class:" col-auto mx-1  btn btn-secondary " %>
+</div>
+
+
+
+<div class="col-md-auto  " id="del_btn">
+   <%= button_to "Delete ", @author, method: :delete,class:" col-auto btn btn-danger" %>
+
+</div>
+
+
+</div>
+
+</div>

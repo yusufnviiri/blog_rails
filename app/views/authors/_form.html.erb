@@ -1,0 +1,18 @@
+
+
+
+<div class=" author-form">
+<h3 style="color: rgb(224, 196, 192);">User Form</h3>
+
+<%= form_with(model: @author) do |form| %>
+<%= form.label :name, "Full  name" ,class: "form-label"  %>
+<%= form.text_field :name,placeholder:"Full Name" ,class: "form-control mb-2"%>
+<%= form.label :image, "Choose photo" %>
+<%= form.file_field :image ,class: "form-control mb-2"  %>
+
+<%= form.label :bio, "Details" %>
+<%= form.text_field :bio ,class: "form-control" %>
+<%= form.submit "Submit" ,class: "btn btn-info mt-3"%>
+
+<%end%>
+</div>
